@@ -1,15 +1,20 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
-import TodoModel from './models/todoList.js';  
+import './models/todoList.js';
 
 var app = express();
 app.use(cors());
 app.use(express.json());
 
-// Connect to your MongoDB database (replace with your database URL)
-mongoose.connect("mongodb+srv://gpravalika2002:Pravalika%40@my-todocluster.1t7oz.mongodb.net/?retryWrites=true&w=majority&appName=my-todoCluster");
-
+// Connect to your MongoDB database 
+mongoose.connect('mongodb+srv://gpravalika2002:Pravalika%40@my-todocluster.1t7oz.mongodb.net/?retryWrites=true&w=majority&appName=my-todoCluster', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    ssl: true,
+    tlsAllowInvalidCertificates: true,
+  });
+  
 // Check for database connection errors
 mongoose.connection.on("error", (error) => {
     console.error("MongoDB connection error:", error);
