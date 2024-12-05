@@ -2,6 +2,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import './models/todoList.js';
+import './playground-1.mongodb';
 
 var app = express();
 app.use(cors());
