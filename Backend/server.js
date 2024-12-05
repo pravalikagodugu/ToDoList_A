@@ -9,13 +9,12 @@ app.use(cors());
 app.use(express.json());
 
 // Connect to your MongoDB database 
-mongoose.connect('mongodb+srv://gpravalika2002:Pravalika%40@my-todocluster.1t7oz.mongodb.net/?retryWrites=true&w=majority&appName=my-todoCluster', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    ssl: true,
-    tlsAllowInvalidCertificates: true,
-  });
-  
+  mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => console.log('MongoDB connected'))
+    .catch((err) => {
+        console.error('Connection error:', err);
+    });
+
 // Check for database connection errors
 mongoose.connection.on("error", (error) => {
     console.error("MongoDB connection error:", error);
