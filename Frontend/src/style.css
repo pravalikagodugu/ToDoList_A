@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eeeea0; /* Pale yellow */
+    display: flex;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: #f0d1a3; /* Light orange */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px; 
+}
+
+h1 {
+    color: rgb(241, 69, 69); /* Todo List text color */
+    margin-bottom: 20px;
+}
+
+input {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+}
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.task.completed {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.task span {
+    font-size: 1em; /* H3 size */
+    font-weight: bold; /* Stylish task text */
+    color: #333;
+}
+
+.task button {
+    background: #FF9999; /* Light red color */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px; /* Optional: rounded corners */
+}
